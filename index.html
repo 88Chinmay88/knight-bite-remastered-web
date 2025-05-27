@@ -1,28 +1,560 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knight Bite - Exceptional Dining Experience</title>
-    <meta name="description" content="Knight Bite Restaurant - Exceptional dining experience with premium cuisine and outstanding service." />
-    <meta name="author" content="Knight Bite" />
+    <meta name="description" content="Knight Bite Restaurant - Exceptional dining experience with premium cuisine and outstanding service.">
+    <meta name="author" content="Knight Bite">
+    
+    <meta property="og:title" content="Knight Bite - Exceptional Dining Experience">
+    <meta property="og:description" content="Knight Bite Restaurant - Exceptional dining experience with premium cuisine and outstanding service.">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-knight">Knight</span> Bite
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="btn btn-primary" onclick="scrollToSection('reservation')">Book a Table</button>
+            </div>
 
-    <meta property="og:title" content="Knight Bite - Exceptional Dining Experience" />
-    <meta property="og:description" content="Knight Bite Restaurant - Exceptional dining experience with premium cuisine and outstanding service." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@knight_bite" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-  </head>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#menu" class="mobile-nav-link">Menu</a>
+            <a href="#gallery" class="mobile-nav-link">Gallery</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <button class="btn btn-primary mobile-reserve-btn" onclick="scrollToSection('reservation')">Book a Table</button>
+        </div>
+    </nav>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    A Royal <span class="text-gold">Dining</span> Experience
+                </h1>
+                <p class="hero-description">
+                    Indulge in exquisite cuisine crafted with passion and served with elegance. 
+                    Experience the finest flavors in an atmosphere fit for royalty.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('menu')">
+                        Explore Our Menu
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToSection('reservation')">
+                        Book a Table
+                    </button>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <h3>Exquisite Food</h3>
+                        <p>Crafted with the finest ingredients by world-class chefs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Premium Service</h3>
+                        <p>Attentive staff dedicated to providing royal treatment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Elegant Ambiance</h3>
+                        <p>Sophisticated atmosphere perfect for memorable occasions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>A Tradition of Excellence Since 2005</h3>
+                    <p>
+                        Knight Bite was founded with a simple yet powerful vision: to create a dining experience that combines the rich traditions of culinary excellence with innovative techniques and flavors. Our journey began in 2005, when Chef Alexander Knight opened our doors with a commitment to quality, creativity, and exceptional service.
+                    </p>
+                    <p>
+                        Today, Knight Bite stands as a testament to that vision. Our restaurant has evolved into a destination for food enthusiasts seeking authentic flavors and memorable dining moments. With a team of passionate culinary experts, we continue to push boundaries while honoring the timeless traditions that define great cuisine.
+                    </p>
+                    <div class="about-buttons">
+                        <button class="btn btn-secondary">Meet Our Team</button>
+                        <button class="btn btn-outline-dark">Our Philosophy</button>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="image-grid">
+                        <div class="image-placeholder image-1"></div>
+                        <div class="image-placeholder image-2"></div>
+                        <div class="image-placeholder image-3"></div>
+                        <div class="image-placeholder image-4"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Our Mission</h3>
+                    <p>To deliver unforgettable dining experiences through exceptional cuisine, attentive service, and a warm, inviting atmosphere that makes every guest feel special.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Our Vision</h3>
+                    <p>To be recognized as a culinary destination that consistently exceeds expectations while honoring the traditions and techniques that make great food truly special.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Our Values</h3>
+                    <p>Excellence, creativity, authenticity, and hospitality are the cornerstone values that guide everything we do, from sourcing ingredients to serving our guests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <p>Explore our carefully curated selection of dishes, prepared with the finest ingredients and culinary expertise.</p>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="appetizers">Appetizers</button>
+                <button class="tab-btn" data-tab="mains">Main Courses</button>
+                <button class="tab-btn" data-tab="desserts">Desserts</button>
+                <button class="tab-btn" data-tab="drinks">Beverages</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" id="appetizers">
+                    <h3 class="category-title">Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Royal Garlic Bread <span class="badge vegetarian">Vegetarian</span></h4>
+                                <span class="price">$8</span>
+                            </div>
+                            <p>Freshly baked artisan bread infused with roasted garlic, herbs and parmesan cheese.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Castle Calamari <span class="badge popular">Popular</span></h4>
+                                <span class="price">$12</span>
+                            </div>
+                            <p>Crispy fried calamari served with zesty marinara and lemon aioli.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Knight's Bruschetta <span class="badge vegetarian">Vegetarian</span> <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$9</span>
+                            </div>
+                            <p>Toasted baguette topped with diced tomatoes, fresh basil, garlic, and olive oil.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Jousting Shrimp Cocktail <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$14</span>
+                            </div>
+                            <p>Chilled jumbo shrimp served with our signature cocktail sauce.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="mains">
+                    <h3 class="category-title">Main Courses</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Knight's Signature Steak <span class="badge popular">Popular</span> <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$32</span>
+                            </div>
+                            <p>Perfectly grilled 12oz ribeye with herb butter, served with roasted potatoes and seasonal vegetables.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Royal Salmon <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$26</span>
+                            </div>
+                            <p>Pan-seared Atlantic salmon with lemon dill sauce, served with wild rice and asparagus.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Medieval Mushroom Risotto <span class="badge vegetarian">Vegetarian</span></h4>
+                                <span class="price">$22</span>
+                            </div>
+                            <p>Creamy arborio rice with wild mushrooms, truffle oil, and aged parmesan cheese.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>King's Chicken Piccata</h4>
+                                <span class="price">$24</span>
+                            </div>
+                            <p>Pan-seared chicken breast in lemon caper sauce, served with angel hair pasta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="desserts">
+                    <h3 class="category-title">Desserts</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Castle Chocolate Tower <span class="badge vegetarian">Vegetarian</span> <span class="badge popular">Popular</span></h4>
+                                <span class="price">$10</span>
+                            </div>
+                            <p>Decadent chocolate mousse layered with chocolate sponge cake and ganache.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Knight's Crème Brûlée <span class="badge vegetarian">Vegetarian</span> <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$9</span>
+                            </div>
+                            <p>Classic vanilla bean custard with a caramelized sugar crust.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Royal Berry Trifle <span class="badge vegetarian">Vegetarian</span></h4>
+                                <span class="price">$8</span>
+                            </div>
+                            <p>Fresh seasonal berries layered with mascarpone cream and ladyfingers.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Golden Apple Tart <span class="badge vegetarian">Vegetarian</span></h4>
+                                <span class="price">$9</span>
+                            </div>
+                            <p>Warm apple tart with cinnamon, caramel sauce, and vanilla ice cream.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="drinks">
+                    <h3 class="category-title">Beverages</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Knight's Elixir</h4>
+                                <span class="price">$12</span>
+                            </div>
+                            <p>Our signature cocktail with premium vodka, elderflower, and citrus.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Castle Reserve Wine <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$10-15</span>
+                            </div>
+                            <p>Selection of premium red and white wines from our cellar.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Royal Tea Selection <span class="badge vegetarian">Vegetarian</span> <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$5</span>
+                            </div>
+                            <p>Assortment of fine loose leaf teas from around the world.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Artisan Coffee <span class="badge vegetarian">Vegetarian</span> <span class="badge gluten-free">Gluten-Free</span></h4>
+                                <span class="price">$4</span>
+                            </div>
+                            <p>Freshly brewed specialty coffee, served with house-made biscotti.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-footer">
+                <p>Please inform your server of any allergies or dietary restrictions.</p>
+                <button class="btn btn-primary" onclick="scrollToSection('reservation')">Reserve a Table</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Our Gallery</h2>
+                <p class="text-white">Take a visual journey through our restaurant, our dishes, and the experiences we create.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal(1)">
+                    <div class="gallery-placeholder">Image 1</div>
+                </div>
+                <div class="gallery-item" onclick="openModal(2)">
+                    <div class="gallery-placeholder">Image 2</div>
+                </div>
+                <div class="gallery-item" onclick="openModal(3)">
+                    <div class="gallery-placeholder">Image 3</div>
+                </div>
+                <div class="gallery-item" onclick="openModal(4)">
+                    <div class="gallery-placeholder">Image 4</div>
+                </div>
+                <div class="gallery-item" onclick="openModal(5)">
+                    <div class="gallery-placeholder">Image 5</div>
+                </div>
+                <div class="gallery-item" onclick="openModal(6)">
+                    <div class="gallery-placeholder">Image 6</div>
+                </div>
+            </div>
+
+            <div class="gallery-footer">
+                <button class="btn btn-outline-white">View More Photos</button>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div class="modal" id="gallery-modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-image">
+                    <div class="modal-placeholder" id="modal-image">Full Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Make a Reservation</h2>
+                <p class="text-white">Reserve your table today and experience the royal treatment at Knight Bite.</p>
+            </div>
+
+            <div class="reservation-card">
+                <div class="reservation-info">
+                    <h3>Reserve Your Experience</h3>
+                    <p>Secure your table and prepare for an unforgettable dining experience.</p>
+                    <ul class="reservation-notes">
+                        <li>For parties over 8, please call us directly</li>
+                        <li>Same-day reservations are based on availability</li>
+                        <li>Special occasions? Let us know in advance</li>
+                    </ul>
+                </div>
+                <div class="reservation-form">
+                    <form id="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select number of guests</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7">7 People</option>
+                                <option value="8">8 People</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests (Optional)</label>
+                            <textarea id="special-requests" name="special-requests" placeholder="Any special requests or dietary requirements"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width">Reserve Now</button>
+                        
+                        <p class="form-note">
+                            By making a reservation, you agree to our reservation policy including our 24-hour cancellation policy.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p>Have questions or want to provide feedback? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We value your feedback and are here to answer any questions you may have.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>123 Royal Street, Knightsville, KN 12345</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p>info@knight-bite.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>
+                                Monday - Thursday: 11:00 AM - 10:00 PM<br>
+                                Friday - Saturday: 11:00 AM - 11:00 PM<br>
+                                Sunday: 11:00 AM - 9:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-knight">Knight</span> Bite
+                    </div>
+                    <p>Exceptional dining experience with premium cuisine and outstanding service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-hours">
+                    <h3>Opening Hours</h3>
+                    <ul>
+                        <li><strong>Monday - Thursday:</strong><br>11:00 AM - 10:00 PM</li>
+                        <li><strong>Friday - Saturday:</strong><br>11:00 AM - 11:00 PM</li>
+                        <li><strong>Sunday:</strong><br>11:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><strong>Address:</strong><br>123 Royal Street, Knightsville, KN 12345</li>
+                        <li><strong>Phone:</strong><br>(123) 456-7890</li>
+                        <li><strong>Email:</strong><br>info@knight-bite.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Knight Bite Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
