@@ -370,6 +370,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover; /* Ensures image covers the whole container */
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
 
 
 .values-grid {
